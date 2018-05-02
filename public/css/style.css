@@ -1,0 +1,95 @@
+body {
+  font-family: Arial;
+}
+textarea {
+  resize: none;
+}
+.form-control {
+  font-size: 0.9em;
+}
+/* borda vermelha na box quando não preenche */
+.alteraFocoErro {
+  border-color: #FF0000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+/* Tamanho da fonte dentro dos formulários */
+.form-group {
+  text-align: center;
+  font-size: 1em;
+}
+.jumbotron {
+  box-shadow: 1px 1px 4px 1px #aaa;
+  background-color: #f3f3f3;
+}
+h2 {
+  font-family: Impact;
+}
+p {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.glyphicon-search {
+  font-size: 0.8em;
+}
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.btns {
+  text-align: center;
+}
+/* Removendo os Spinners */
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Removendo os Spinners do Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+/* botão OK da tela de consulta, espaçamento para o lado esquerdo */
+#btnSubmit-consulta {
+  /*margin-left: 10px;*/
+  width: 100%;
+}
+#container-consulta {
+  margin: 0 auto 0 auto;
+}
+.table-responsive, th {
+  text-align: center;
+}
+.mensagem-validacao {
+  color: maroon;
+  position: absolute;
+}
+.img-logohelpdesk-menu {
+  float: left;
+  width: 20px;
+}
+#logohelpdesk {
+  pointer-events: none;
+  cursor: default;
+  color: #fff
+}
+/* TELA DE LOGIN */
+.login-box {
+  text-align: center;
+  box-shadow: 1px 1px 10px 1px grey;
+  border-radius: 7px;
+  padding: 40px;
+  margin-top: 15px;
+}
+.img-logohelpdesk-login {
+  margin: auto auto;
+}
+.input-login-margin {
+  margin-bottom: 5px;
+}
+.icon-login-input {
+  position: relative;
+  top: 0px;
+}
+.icon-login-btn {
+  position: relative;
+  top: 2px;
+}
+/* Tabelas da tela de consulta */
