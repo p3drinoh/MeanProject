@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('helpdesk')
+    .module('lasa')
     .controller('colaboradorController', colaboradorController);
 
     colaboradorController.$inject = [$http, $scope];
 
-    function(colaboradorController){
+    function colaboradorController(){
       /* jshint validthis: true*/
 
       $http.get('/v1/colaboradores')

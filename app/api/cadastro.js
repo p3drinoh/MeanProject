@@ -17,7 +17,7 @@ api.lista = function(req, res) {
 
 api.buscaPorId = function(req, res) {
   model
-    .find({'idAluno' : vm.cadastro.idALuno})
+    .find({'codProd' : vm.cadastro.codProd})
     .then(function(cadastro) {
       if(!cadastro) throw Error('Cadastro não encontrado');
       res.json(cadastro);

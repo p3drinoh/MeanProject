@@ -5,7 +5,7 @@
     'use strict;'
 
     angular
-        .module('helpdesk')
+        .module('lasa')
         .service('tokenInterceptor', tokenInterceptor);
 
     tokenInterceptor.$inject = ['$window', '$q', '$location'];

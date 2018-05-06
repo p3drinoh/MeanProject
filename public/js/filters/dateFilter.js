@@ -1,4 +1,4 @@
-angular.module('helpdesk').filter("dateFilter", function($filter) {
+angular.module('lasa').filter("dateFilter", function($filter) {
 	return function( items, fromDate, toDate ) {
 		var filtered = [];
 		var from_date = "";

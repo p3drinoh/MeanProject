@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('helpdesk')
+    .module('lasa')
     .controller('entradaController', entradaController);
 
   entradaController.$inject = ['$http', '$scope'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('helpdesk')
+        .module('lasa')
         .controller('logoutController', logoutController);
 
     logoutController.$inject = ['$scope', '$http', '$location', '$window'];

@@ -5,7 +5,7 @@
  if the key === false then no filtering will be performed
  * @return {array}
  */
-angular.module('helpdesk').filter('unique', function () {
+angular.module('lasa').filter('unique', function () {
 
   return function (items, filterOn) {
 

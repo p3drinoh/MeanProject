@@ -1,21 +1,21 @@
 /*jslint node: true */
 /*jshint esversion: 6 */
 
-(function() {
-'use strict';
+(function () {
+  'use strict';
 
-angular
-  .module('helpdesk')
-  .service('consultaService', consultaService);
+  angular
+    .module('lasa')
+    .service('consultaService', consultaService);
 
-consultaService.$inject = ['$http', '$resource'];
+  consultaService.$inject = ['$http', '$resource'];
 
-function consultaService($http, $resource) {
+  function consultaService($http, $resource) {
 
-      return $resource('/v1/cadastros/:cadastroId', null, {
-        'update' : {
-          method: 'PUT'
-        }
+    return $resource('/v1/cadastros/:cadastroId', null, {
+      'update': {
+        method: 'PUT'
+      }
     });
 
   }

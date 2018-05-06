@@ -5,7 +5,7 @@
 'use strict';
 
 angular
-  .module('helpdesk')
+  .module('lasa')
   .service('cadastroService', cadastroService);
 
 cadastroService.$inject = ['$http'];
@@ -21,6 +21,8 @@ function cadastroService($http) {
   this.consultar = function() {
     return $http.get(rota);
   };
+
+  
 
 }
 })();
