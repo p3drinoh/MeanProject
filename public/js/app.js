@@ -23,6 +23,12 @@ angular.module( 'lasa', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngResource', 'm
         templateUrl:"views/consulta/consulta.html",
         controller:"consultaController",
         controllerAs:"vm"
+      })
+      .when('/cadastro/:cadastroId',{
+        templateUrl:"views/cadastro.html",
+        controller:"cadastroController",
+        controllerAs:"vm"
       });
+ 
     $routeProvider.otherwise({redirectTo: "/cadastro"});
   });

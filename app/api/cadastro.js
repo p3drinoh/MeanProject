@@ -4,52 +4,65 @@ var api = {};
 
 var model = mongoose.model('Cadastro');
 
-var erroApi = require('./callBacks');
-
 api.lista = function(req, res) {
+
   model
     .find({})
     .then(function(cadastros) {
-      res.json(cadastros);
-    }, erroApi.callbackFind
-  );
+        res.json(cadastros);
+    }, function(error) {
+          console.log(error);
+          res.status(500).json(error);
+    });
 };
 
 api.buscaPorId = function(req, res) {
+
   model
-    .find({'codProd' : vm.cadastro.codProd})
+    .findById(req.params.id)
     .then(function(cadastro) {
-      if(!cadastro) throw Error('Cadastro não encontrado');
+      if(!cadastro) throw Error('cadastro não encontrado');
       res.json(cadastro);
-    }, erroApi.callbackFindById
-  );
+
+    }, function(error) {
+          console.log(error);
+          res.status(404).json(error);
+    });
 };
 
 api.removePorId = function(req, res) {
+
   model
     .remove({_id: req.params.id})
     .then(function() {
-      res.sendStatus(204);
-    }, erroApi.callbackRemove
-  );
+        res.sendStatus(204);
+
+    }, function(error) {
+          console.log(error);
+          res.status(500).json(error);
+    });
 };
 
 api.adiciona = function(req, res) {
-  model
-    .create(req.body)
-    .then(function(cadastro) {
-      res.json(cadastro);
-    }, erroApi.callbackSave
-  );
-};
+
+        model.create(req.body)
+        .then(function(cadastro) {
+            res.json(cadastro);
+        }, function(error) {
+            console.log(error);
+            res.sendStatus(500);
+        });
+    };
 
 api.atualiza = function (req, res) {
   model
     .findByIdAndUpdate(req.params.id, req.body)
     .then(function() {
-      res.json(cadastro);
-    }, erroApi.callbackUpdate
-  );
+        res.json(prpduto);
+    }, function(error) {
+        console.log(error);
+        res.sendStatus(500);
+    });
 };
 
 module.exports = api;

@@ -13,10 +13,11 @@
 
     vm.cadastro = [];
     vm.ordenar = ordenar;
-    vm.edit = edit;
+   // vm.edit = edit;
     vm.sortKey = "data";
     vm.reverse = true;
     vm.filtrarConsulta = filtrarConsulta;
+    vm.remover = remover;
 
     consultaService.query(function(cadastros){
       vm.cadastros = cadastros;
@@ -28,6 +29,15 @@
       vm.sortKey = keyname;
       vm.reverse = !vm.reverse;
     }
+
+   /* if($routeParams.cadastroId) {
+			recursoCadastro.get({cadastroId: $routeParams.cadastroId}, function(cadastro) {
+				$scope.cadastro = cadastro; 
+			}, function(erro) {
+				console.log(erro);
+				$scope.mensagem = 'Não foi possível obter a foto'
+			});
+		}*/
 
     function filtrarConsulta(filtro1, filtro2) {
       switch (filtro2) {
@@ -56,13 +66,17 @@
           vm.filtrarCodprod="";
           vm.filtrarData="";
           vm.filtrarPrecoProd="";
-      }
+      }  
     }
-
-    function edit(cadastros, index){
-      vm.cadastro = angular.copy(cadastro);
-      vm.cadastro.index = index;
-    }
-
-  }
+ function remover (cadastro) {
+      recursoConsulta.delete({cadastroId: cadastro._id}, function() {
+        var indiceDoCadastro = vm.cadastros.indexOf(cadastro);
+        vm.cadastros.splice(indiceDoCadastro, 1);
+        $scope.mensagem = 'Foto ' + foto.titulo + ' removida com sucesso!';
+      }, function(erro) {
+        console.log(erro);
+        $scope.mensagem = 'Não foi possível apagar a foto ' + foto.titulo;
+      });
+    };
+}
 })();

@@ -5,9 +5,9 @@
     .module('lasa')
     .controller('cadastroController', cadastroController);
 
-  cadastroController.$inject = ['$http', '$scope', 'cadastroService', '$timeout'];
+  cadastroController.$inject = ['$http', '$scope', 'cadastroService', '$timeout', '$routeParams'];
 
-  function cadastroController($http, $scope, cadastroService, $timeout) {
+  function cadastroController($http, $scope, cadastroService, $timeout, $routeParams) {
     /* jshint validthis: true*/
     var vm = this;
 
@@ -25,6 +25,7 @@
         vm.mensagem = '';
       }, 3000);
     }
+  
 
     function limpaCampos(formCadastro) {
       if(formCadastro){
